@@ -1,0 +1,54 @@
+Subprograme:
+  void screen()
+   Initializeaza ecranul de Start, cu numele jocului si tabelul.
+  int wordlist(char f[W_MAX][6])
+   Citeste in vectorul f cuvintele din word.txt unde se afla solutile posibile.
+  int randomized(int n)
+   Returneaza un numar aleatoriu din intervalul [0,n)
+  int isdel(char a)
+   Spune daca a este backspace.
+  void colors(char s[], char f[], int c[])
+   Pune in c ce culoare trebuie aleasa pentru fiecare litera din f,
+  s fiind solutia.
+    1=negru
+    2=galben
+    3=verde
+  int win(int s[])
+   Returneaza 1 daca jucatorul a castigat.
+   Castigul este determinat de faptul ca toate elementele din s sunt 2(verde).
+  int finish()
+   Functie apelata la introducerea caratcerului ':'
+   Aduce un meniu care permite jucatorului sa iasa din joc
+  sau sa inceapa altul.
+  void paint(char inp[], int a[], int l)
+   Schimba propriu-zis culoarea literelor.
+  void strupr(char f[])
+   Transforma literele din f in majuscule.
+  int line(char inp[], int *i, int j, int *eg)
+   Functie de procesare linie.
+   Subprogramul citeste urmatoarele 6-i caractere si verifica sa fie litere
+   In cazul in care una este enter se returneaza 0,
+  iar i scade cu o unitate(conduce la reprocesarea liniei).
+   Daca este ':' se modifica eg(initial 2)
+      eg=2 => jocul continua
+      eg=1 => se reseteaza jocul
+      eg=0 => se inchide aplicatia
+    Se reafiseaza caracterele ca majuscule.
+    Functia proceseaza si backspace.
+ Program:
+  Se creaza lista de cuvinte.
+  Cat timp jucatorul doreste sa joace(cont este 'y'):
+   Prima oara se reseteaza ecranul.
+   Se alege solutia cu randomized(n).
+   Pentru fiecare linie se citesc primele 5 caractere si
+  se verifica sa fie litere.
+    Se apelweaza line de la pozitia 1.
+    Dupa introducerea celor 5 litere, jocul asteapta introducerea
+   unui enter(functile de backspace si : inca functioneaza).
+    Apoi se determina vectorul cu ordinea colorari si se coloreaza literele
+    Dupa aceea se determina daca jucatorul a castigat.
+   Se afiseaza un mesaj si in cazul in care jucatorul pierde.
+   Daca eg este 2 este intrebat daca mai doreste sa joace,
+  unde va raspunde cu 'y'(da) sau 'n'(nu).
+   Daca eg este 1 se va incepe alt joc,
+  iar daca este 0 se va inchide programul.
